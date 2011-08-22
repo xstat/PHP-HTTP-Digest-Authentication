@@ -1,0 +1,13 @@
+
+Users and passwords are stored in the database.
+
+The realm is hardcoded in class/login.class.php.
+realm="Private Secure Network"
+
+if you want to create a new user please:
+
+insert into users set username='admin', password=md5("admin:Private Secure Network:adminpass"); 
+
+hope you like it. This is my first github repo.
+
+cheers, Ignacio.
