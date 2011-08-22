@@ -21,8 +21,8 @@ class Login
    public function force_login() {
 
       header("HTTP/1.1 401 Unauthorized");
-      $html_digest = 'WWW-Authenticate: Digest realm="' . $this->realm . '",nonce="' . $this->nonce . 
-	 '",qop="auth",opaque="' . $this->opaque . '"';
+      $html_digest = 'WWW-Authenticate: Digest realm="' . $this->realm .
+	 '",nonce="' . $this->nonce . '",qop="auth",opaque="' . $this->opaque . '"';
       header($html_digest);
 
       echo "<p>Access Denied</p>";
@@ -38,8 +38,8 @@ class Login
 
 	 $A1 = $this->user["password"];
 	 $A2 = md5($_SERVER["REQUEST_METHOD"] . ":" . $this->digest["uri"]);
-	 $valid_response = md5($A1 . ":" . $digest["nonce"] . ":" . $digest["nc"] . ":" . $digest["cnonce"] .
-	    ":" . $digest["qop"] . ":" . $A2);
+	 $valid_response = md5($A1 . ":" . $digest["nonce"] . ":" .
+	    $digest["nc"] . ":" . $digest["cnonce"] . ":" . $digest["qop"] . ":" . $A2);
 
 	 if ($valid_response === $this->digest["response"])
 	    return TRUE;

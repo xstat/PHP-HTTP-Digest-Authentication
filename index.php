@@ -11,7 +11,7 @@
 
 require_once("include/auth.inc.php");
 
-echo "<p>BIEN HECHO NENEEEE!!!!</p>";
+echo "<p>Private Content</p>";
 echo "<p>" . microtime(TRUE) . "</p>";
 echo "<a href='logout.php'>Logout</a>";
 
